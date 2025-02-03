@@ -58,9 +58,9 @@ def cluster_entropy_qc_metric(adata: AnnData,
     ## Initialize with a value outside range of entropy.
     qc_entropy = [-1] * adata.shape[0]
     ## Compute entropy on annotation column for each cluster
-    for cluster in np.unique(adata.obs["cluster_column"]):
-        qc_entropy[adata.obs["cluster_column"] == cluster] = \
-            scipy.stats.entropy(adata.obs.loc[adata.obs["cluster_column"] == cluster, annotation_column].value_counts() / sum(adata.obs["cluster_column"] == cluster))
+    for cluster in np.unique(adata.obs[cluster_column]):
+        qc_entropy[adata.obs[cluster_column] == cluster] = \
+            scipy.stats.entropy(adata.obs.loc[adata.obs[cluster_column] == cluster, annotation_column].value_counts() / sum(adata.obs[cluster_column] == cluster))
     ##
     return qc_entropy
 
