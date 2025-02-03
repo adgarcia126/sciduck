@@ -10,3 +10,5 @@ __credits__ = 'Allen Institute for Brain Science'
 
 from . import basic_qc as qc
 from . import plotting as pl
+from . import entropy_qc as entropy
+from . import annotation_table as annot
