@@ -1,6 +1,7 @@
 from anndata import AnnData
 import scanpy as sc
 import numpy as np
+import scipy
 
 def filter_on_cluster_entropy(adata: AnnData,
                                 cluster_column: str,
